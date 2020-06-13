@@ -27,10 +27,10 @@ echo "/dev/sda4 - rest of space will be mounted as /home"
 
 read -p 'Continue? [y/N]: ' fsok
 if ! [ $fsok = 'y' ] && ! [ $fsok = 'Y' ]
-  then
-    echo ""
-    echo "Exiting! Edit the script and run it again to continue..."
-    exit 0
+then
+  echo ""
+  echo "Exiting! Edit the script and run it again to continue..."
+  exit 0
 fi
 
 sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk ${TGTDEV}
