@@ -7,12 +7,10 @@ loadkeys br-abnt2
 
 # Set up network connection
 read -p 'Are you connected to internet? [y/N]: ' neton
-if ![ $neton = 'y' ] && ![ $neton = 'Y' ];  
-then
-    echo "Connect to internet to continue..."
-    exit
+if ! [ $neton = 'y' ] && ! [ $neton = 'Y' ]; then
+  echo "Connect to internet to continue..."
+  exit
 fi
-
 
 #Checking internet connection
 while true;
@@ -36,8 +34,7 @@ echo "/dev/sda4 - rest of space will be mounted as /home"
 
 echo "Continue? [y/N]: "
 read fsok
-if [ ![ $fsok = 'y' ] && ![ $fsok = 'Y' ] ]
-then
+if [ ![ $fsok = 'y' ] && ![ $fsok = 'Y' ] ]; then
   echo ""
   echo "Exiting! Edit the script and run it again to continue..."
   exit 0
