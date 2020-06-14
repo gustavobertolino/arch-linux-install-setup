@@ -5,8 +5,8 @@ ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
 
 #Edit locale and uncomment the en_US.UTF-8
-lang=en_US.UTF-8; 
-sed -i "/en_US.UTF-8 UTF-8/s/^#//g" /etc/locale.gen
+lang=en_US.UTF-8 UTF-8;
+sed -i "/^#$lang/ c$lang" /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" /etc/locale.conf
 

@@ -100,7 +100,7 @@ if ![$aws = 1]; then
 fi
 
 #Install arch linux packages
-pacstrap /mnt base linux sudo vim grub efibootmgr networkmanager
+pacstrap /mnt base linux sudo vim wget grub efibootmgr networkmanager
 
 #Generate fstab
 genfstab -U -p /mnt >> /mnt/etc/fstab
