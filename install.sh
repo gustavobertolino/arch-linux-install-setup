@@ -3,9 +3,9 @@
 echo "Welcome to arch linux automating install script!"
 
 # Set up network connection
-read -p 'Are you connected to internet? [y/N]: ' neton
-if [ ![ $neton = 'y' ] && ![ $neton = 'Y' ] ]; then
-  echo "Connect to internet to continue..."
+read -p "Are you connected to internet? [y=1/N=0]: " neton
+if ![ $neton = 1 ] ; then
+  echo "Please! Connect to internet to continue..."
   exit
 fi
 
@@ -29,9 +29,9 @@ echo "/dev/sda2 - 9GiB will be used as /"
 echo "/dev/sda3 - 1G will be used as swap"
 echo "/dev/sda4 - rest of space will be mounted as /home"
 
-echo "Continue? [y/N]: "
+echo "Continue? [y=1/N=0]: "
 read fsok
-if [ ![ $fsok = 'y' ] && ![ $fsok = 'Y' ] ]; then
+if ![ $fsok = 1 ]; then
   echo ""
   echo "Exiting! Edit the script and run it again to continue..."
   exit 0
