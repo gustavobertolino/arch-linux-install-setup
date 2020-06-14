@@ -40,7 +40,6 @@ fi
 echo "Put the disk: (Ex. /dev/sda)"
 read disk
 sed -e "s/\s*\([\+0-9a-zA-Z]*\).*/\1/" << EOF | fdisk $disk
-  d # delete any partition if any exists
   o # clear the in memory partition table
   n # new partition
   p # primary partition
@@ -88,6 +87,17 @@ mount /dev/sda1 /mnt/boot/efi
 
 mkdir -p /mnt/home
 mount /dev/sda4 /mnt/home
+
+#Double-check partitions and mounting
+lsblk
+
+echo "Continue? [y=1/N=0]: "
+read aws
+if ![$aws = 1]; then
+  echo ""
+  echo "Exiting install..."
+  exit
+fi
 
 #Install arch linux packages
 pacstrap /mnt base linux sudo vim grub efibootmgr networkmanager
