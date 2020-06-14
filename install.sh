@@ -55,10 +55,7 @@ sed -e "s/\s*\([\+0-9a-zA-Z]*\).*/\1/" << EOF | fdisk $disk
   p # primary partition
   3 # partion number 3
     # default, start immediately after preceding partition
-  +1G
-  t # change partition type to swap
-  3 # partition to be swap
-  82 # code for swap
+  +1G 
   n #new partition
   p # primary partition
   4 # partition number 4
@@ -68,6 +65,10 @@ sed -e "s/\s*\([\+0-9a-zA-Z]*\).*/\1/" << EOF | fdisk $disk
   1 # bootable partition is partition 1 -- /dev/sda1
   p # print the in-memory partition table
   w # write the partition table
+  t # change partition type to swap
+  3 # partition to be swap
+  82 # code for swap
+  w # write the changes
   q # and we're done
 EOF
 
