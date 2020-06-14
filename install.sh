@@ -5,6 +5,15 @@ echo "Welcome to arch linux automating install script!"
 #Set keboard layout
 loadkeys br-abnt2
 
+# Set up network connection
+read -p 'Are you connected to internet? [y/N]: ' neton
+if ! [ $neton = 'y' ] && ! [ $neton = 'Y' ]
+then
+    echo "Connect to internet to continue..."
+    exit
+fi
+
+
 #Checking internet connection
 while true;
 do
