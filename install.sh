@@ -27,7 +27,7 @@ echo "/dev/sda4 - rest of space will be mounted as /home"
 
 echo "Continue? [y/N]: "
 read fsok
-if ![ $fsok = 'y' ] && ![ $fsok = 'Y' ]
+if [ ![ $fsok = 'y' ] && ![ $fsok = 'Y' ] ]
 then
   echo ""
   echo "Exiting! Edit the script and run it again to continue..."
