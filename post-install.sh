@@ -31,7 +31,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB 
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Create new user
-useradd -m -G wheel,power,iput,storage,uucp,network $USER
+useradd -m -G wheel,power,storage,uucp,network $USER
 sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
 
 # Set user password
