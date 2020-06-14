@@ -5,18 +5,18 @@ ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 hwclock --systohc
 
 #Edit locale and uncomment the en_US.UTF-8
-LANG_USER=en_US.UTF-8 UTF-8;
+LANG_USER=en_US.UTF-8^UTF-8;
 sed -i "/^#$LANG_USER/ c$LANG_USER" /etc/locale.gen
 locale-gen
-echo "LANG=en_US.UTF-8" /etc/locale.conf
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 
 #Set keyboard layout for installed OS
-echo "KEYMAP=br-abnt2" /etc/vconsole.conf
+echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
 
 #Set hostname
 read -p "Give a hostname: " hostname
-echo $hostname /etc/hostnames
-echo "127.0.1.1	$hostname.localdomain $hostname"
+echo $hostname >> /etc/hostnames
+echo "127.0.1.1	$hostname.localdomain $hostname" >> /etc/hosts
 USER=$hostname
 
 #Enable networkmanager
