@@ -108,4 +108,4 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 
 #Enter the installed OS
 arch-chroot /mnt
-
+wget -c https://raw.githubusercontent.com/gustavobertolino/arch-linux-install-setup/master/post-install.sh

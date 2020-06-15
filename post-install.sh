@@ -38,6 +38,8 @@ sed --in-place 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sud
 echo "Set user password:"
 passwd $USER
 
+wget -c https://raw.githubusercontent.com/gustavobertolino/arch-linux-install-setup/master/os-wm-setup.sh
+
 echo "The only thing left is to reboot into the new system."
 echo "Press any key to reboot or Ctrl+C to cancel..."
 read tmpvar
