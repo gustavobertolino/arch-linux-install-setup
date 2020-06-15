@@ -1,6 +1,6 @@
 #Install i3 wm, fonts and other basic tools
 sudo pacman -S xorg xorg-server xorg-xinit pulseaudio-alsa brightnessctl mesa mesa-libgl virtualbox-guest-utils i3 dmenu shutter \ 
-  ttf-dejavu rxvt-unicode \
+  ttf-dejavu rxvt-unicode unzip \
   brightnessctl lightdm lightdm-gtk-greeter mlocate htop neofetch \ 
   httpie git tig ranger diff-so-fancy clojure erlang elixir ruby ruby-irb rubygems \
   redis postgresql rabbitmq docker docker-compose emacs
@@ -25,4 +25,5 @@ updatedb
 sudo systemctl enable lightdm
 
 xrdb -load .Xresources
-startx
+exit
+reboot
