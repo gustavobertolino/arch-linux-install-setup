@@ -1,29 +1,31 @@
 #!/bin/bash
 
 echo "Welcome to arch linux automating install script!"
+echo ""
 
-# Set up network connection
+# Check network connection
 read -p "Are you connected to internet? [y=1/N=0]: " neton
 if ![ $neton == 1 ] ; then
   echo "Please! Connect to internet to continue..."
   exit
 fi
 
-#Checking internet connection
+echo "Let's check if you are really connected..."
+#Double-check internet connection
 while true;
 do
   ping -c1 google.com
   if [ $? -eq 0 ]
   then
     echo ""
-    echo "internet connection OK!"
+    echo "Internet connection OK!"
     break
   fi
 done
 
 # Filesystem mount warning
 echo ""
-echo "This script will create and format the partitions as follows:"
+echo "WARNING! This script will create and format your disk with partitions as follows:"
 echo "/dev/sda1 - 512Mib will be mounted as /boot/efi"
 echo "/dev/sda2 - 9GiB will be used as /"
 echo "/dev/sda3 - 1G will be used as swap"
