@@ -30,8 +30,8 @@ mkdir -p ~/documents
 IMAGE_URL=https://i.pinimg.com/originals/e9/83/9c/e9839c0bf09bddcce7ac3ce0f2df047c.jpg
 IMAGE_FILE=e9839c0bf09bddcce7ac3ce0f2df047c.jpg
 wget -c $IMAGE_URL
-mv IMAGE_FILE dark-wallpaper.jpg
-mv dark-wallpaper ~/documents
+sudo mv IMAGE_FILE dark-wallpaper.jpg
+sudo mv dark-wallpaper ~/documents
 echo "exec_always feh --bg-scale ~/documents/dark-wallpaper.jpg" >> ~.config/i3/config
 
 #Set terminal font, background and transparency in terminal
