@@ -34,10 +34,12 @@ mv dark-wallpaper ~/documents
 echo "exec_always feh --bg-scale ~/documents/dark-wallpaper.jpg" >> ~.config/i3/config
 
 #Set terminal font, background and transparency in terminal
-touch .xResources
+touch .Xresources
 echo "URxvt.font: xft:DejavuSansMono:pixelsize=16" >> .Xresources
 echo "URxvt.background: #000000" >> .Xresources
 echo "URxvt.foreground: #ffffff" >> .Xresources
+echo "URxvt*transparent: true" >> .Xresources
+echo "URxvt*shading: 25"
 updatedb
 xrdb -load .Xresources
 
