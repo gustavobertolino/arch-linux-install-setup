@@ -1,5 +1,5 @@
 # arch-linux-install-setup ###
-## Bash script to install Arch linux distro #
+## Bash script to automatically install Arch linux distro #
 
 This install script is set up expecting a machine with at least **20GB of disk storage (and also 512M RAM + 2GHz CPU)**. This disk will be divided in a **logical partition***, as follows:
 
