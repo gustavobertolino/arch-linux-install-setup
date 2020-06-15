@@ -3,10 +3,10 @@ sudo pacman -S xorg xorg-server xorg-xinit pulseaudio-alsa brightnessctl mesa me
   ttf-dejavu rxvt-unicode unzip \
   brightnessctl lightdm lightdm-gtk-greeter mlocate htop neofetch \ 
   httpie git tig ranger diff-so-fancy clojure erlang elixir ruby ruby-irb rubygems \
-  redis postgresql rabbitmq docker docker-compose emacs
+  redis mysql postgresql rabbitmq docker docker-compose emacs
 
 sudo pacman -S gcc python python-pip
-sudo pip install pgcli
+sudo pip install pgcli mycli
 echo "exec i3" >> ~/.xinitrc
 
 #Double-check locale and uncomment the en_US.UTF-8
