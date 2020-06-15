@@ -1,10 +1,12 @@
 #Install i3 wm, fonts and other basic tools
-sudo pacman -S xorg xorg-server xorg-xinit pulseaudio-alsa brightnessctl mesa mesa-libgl virtualbox-guest-utils dmenu ttf-dejavu i3 rxvt-unicode \
-  brightnessctl lightdm lightdm-gtk-greeter mlocate httpie htop ranger diff-so-fancy clojure erlang elixir ruby ruby-irb rubygems \
+sudo pacman -S xorg xorg-server xorg-xinit pulseaudio-alsa brightnessctl mesa mesa-libgl virtualbox-guest-utils i3 dmenu shutter \ 
+  ttf-dejavu rxvt-unicode \
+  brightnessctl lightdm lightdm-gtk-greeter mlocate htop neofetch \ 
+  httpie git tig ranger diff-so-fancy clojure erlang elixir ruby ruby-irb rubygems \
   redis postgresql rabbitmq docker docker-compose emacs
 
-sudo pacman -S python python-pip
-sudo pacman -S pip pgcli
+sudo pacman -S gcc python python-pip
+sudo pip install pgcli
 echo "exec i3" >> ~/.xinitrc
 
 #Double-check locale and uncomment the en_US.UTF-8
