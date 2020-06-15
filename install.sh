@@ -4,7 +4,7 @@ echo "Welcome to arch linux automating install script!"
 
 # Set up network connection
 read -p "Are you connected to internet? [y=1/N=0]: " neton
-if ![ $neton = 1 ] ; then
+if ![ $neton == 1 ] ; then
   echo "Please! Connect to internet to continue..."
   exit
 fi
@@ -31,7 +31,7 @@ echo "/dev/sda4 - rest of space will be mounted as /home"
 
 echo "Continue? [y=1/N=0]: "
 read fsok
-if ![ $fsok = 1 ]; then
+if ![ $fsok == 1 ]; then
   echo ""
   echo "Exiting! Edit the script and run it again to continue..."
   exit 0
@@ -94,7 +94,7 @@ lsblk
 
 echo "Continue? [y=1/N=0]: "
 read aws
-if ![$aws = 1]; then
+if ![$aws == 1]; then
   echo ""
   echo "Exiting install..."
   exit

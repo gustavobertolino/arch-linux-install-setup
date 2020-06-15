@@ -1,5 +1,6 @@
 #Install i3 wm, fonts and other basic tools
-sudo pacman -S xorg xorg-server xorg-xinit pulseaudio-alsa brightnessctl mesa mesa-libgl virtualbox-guest-utils i3 dmenu shutter \ 
+sudo pacman -S xorg xorg-server xorg-xinit pulseaudio-alsa brightnessctl xf86-video-intel \
+  mesa mesa-libgl virtualbox-guest-utils i3 dmenu shutter \ 
   ttf-dejavu rxvt-unicode unzip \
   brightnessctl lightdm lightdm-gtk-greeter mlocate htop neofetch feh 
 
