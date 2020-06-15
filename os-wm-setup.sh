@@ -2,11 +2,19 @@
 sudo pacman -S xorg xorg-server xorg-xinit pulseaudio-alsa brightnessctl mesa mesa-libgl virtualbox-guest-utils i3 dmenu shutter \ 
   ttf-dejavu rxvt-unicode unzip \
   brightnessctl lightdm lightdm-gtk-greeter mlocate htop neofetch \ 
-  httpie git tig ranger diff-so-fancy clojure erlang elixir ruby ruby-irb rubygems \
-  redis mysql postgresql rabbitmq docker docker-compose aws-cli emacs
 
-sudo pacman -S gcc python python-pip
-sudo pip install pgcli mycli
+echo "Do you want also install developer setup packages? [y=1/N=0]"
+read aws
+if [$aws = 1]; then
+  sudo pacman -S httpie git tig ranger diff-so-fancy clojure erlang elixir ruby ruby-irb rubygems \
+  redis mysql postgresql rabbitmq docker docker-compose aws-cli emacs
+  
+  sudo pacman -S gcc python python-pip
+  sudo pip install pgcli mycli
+  
+fi
+
+#Run i3 wm
 echo "exec i3" >> ~/.xinitrc
 
 #Double-check locale and uncomment the en_US.UTF-8
