@@ -15,3 +15,6 @@ This install script is set up expecting a machine with at least **20GB of disk s
 5. After post-install finishes, you should exit and reboot to enter with your new OS user
 6. Then you download and run os-wm-setup script to finish the process
 
+The whole install setup process results in the following environment:
+
+![alt text](./arch-screen-shot-result.png)
