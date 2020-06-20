@@ -3,18 +3,11 @@
 echo "Welcome to arch linux automating install script!"
 echo ""
 
-# Check network connection
-read -p "Are you connected to internet? [y=1/N=0]: " neton
-if ![ $neton == 1 ] ; then
-  echo "Please! Connect to internet to continue..."
-  exit
-fi
-
 echo "Let's check if you are really connected..."
 #Double-check internet connection
 while true;
 do
-  ping -c1 google.com
+  ping -c2 google.com
   if [ $? -eq 0 ]
   then
     echo ""
@@ -39,8 +32,9 @@ if ![ $fsok == 1 ]; then
   exit 0
 fi
 
-echo "Put the disk: (Ex. /dev/sda)"
+echo "Set the disk /dev/sda... "
 read disk
+
 sed -e "s/\s*\([\+0-9a-zA-Z]*\).*/\1/" << EOF | fdisk $disk
   o # clear the in memory partition table
   n # new partition
@@ -109,5 +103,5 @@ pacstrap /mnt base linux sudo vim wget grub efibootmgr networkmanager
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
 #Enter the installed OS
-arch-chroot /mnt
-wget -c https://raw.githubusercontent.com/gustavobertolino/arch-linux-install-setup/master/post-install.sh
+wget -c https://raw.githubusercontent.com/gustavobertolino/arch-linux-install-setup/master/post-install.sh > /mnt/post-install.sh \ 
+  && arch-chroot /mnt bash post-install.sh
